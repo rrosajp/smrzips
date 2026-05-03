@@ -43,11 +43,35 @@
   </extension>
 </addon>
 
-<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.197" provider-name="gujal">
+<addon id="script.module.cloudrequest"
+       name="CloudRequest"
+       version="1.0.2"
+       provider-name="oneplay team">
+
+    <requires>
+        <import addon="xbmc.python" version="3.0.0"/>
+        <import addon="script.module.requests"/>
+    </requires>
+
+    <extension point="xbmc.python.module" library="."/>
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">HTTP library with Cloudflare bypass</summary>
+        <description lang="en">Provides a CloudScraper session with automatic bypass for Cloudflare IUAM challenges.</description>
+        <platform>all</platform>
+        <assets>
+            <icon>icon.png</icon>
+        </assets>
+    </extension>
+
+</addon>
+
+<addon id="script.module.resolveurl" name="ResolveURL" version="5.1.198" provider-name="gujal">
     <requires>
         <!-- <import addon="xbmc.python" version="3.0.0" /> -->
         <import addon="script.module.six" />
         <import addon="script.module.kodi-six" />
+        <import addon="script.module.cloudrequest" optional="true" />
         <import addon="plugin.video.youtube" optional="true" />
         <import addon="script.module.python.twitch" optional="true" />
         <import addon="plugin.googledrive" optional="true" />
